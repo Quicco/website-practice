@@ -1,0 +1,235 @@
+:root {
+  --main-purple: #9d98d8;
+  --secondary-purple: #8179eb;
+  --bg-blur: filter(blur(0.5px));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/******* Font family for all text elements **********/
+h1,
+h2,
+h3,
+a,
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*Make the scrolling smooth*/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: linear-gradient(40deg, #ffffffe3 0%, var(--main-purple) 100%);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Variables */
+
+/* Styling of all nav elements */
+.nav {
+  --_background-color: #fff;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  background-color: var(--_background-color);
+  opacity: 1;
+  z-index: 1;
+}
+
+/*Styling of the links in the nav bar*/
+.nav-links a {
+  /*Links need to be inline-block*/
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px;
+
+  color: rgb(0, 0, 0);
+  transition: color 0.1 ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+/*Styling of the nav links when before, hover, after*/
+a:hover {
+  color: var(--secondary-purple);
+}
+
+#logo:hover {
+  cursor: pointer;
+}
+#logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo img {
+  height: 50px;
+  width: auto;
+}
+
+/****** FIRST SECTION *********/
+
+#home {
+  background-color: white;
+  padding-top: 100px;
+  height: 1000px;
+}
+
+#name {
+  color: var(--secondary-purple);
+}
+
+/*Div wrapping all of the text elements in the home section*/
+.intro {
+  font-size: 45px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5rem;
+  margin: 5rem;
+}
+/*Creating some space between the two h2 elements*/
+.intro h2 {
+  margin-top: 1rem;
+}
+
+/******* SECOND SECTION ********/
+#aboutme {
+  height: 1000px;
+}
+#aboutme h2,
+h3,
+p {
+  margin: 1rem;
+}
+
+#aboutme h2 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5rem;
+  padding-right: 6rem;
+  font-size: 60px;
+}
+
+.description {
+  font-weight: 400;
+  text-align: center;
+  font-size: 40px;
+}
+
+/********** THIRD SECTION **********/
+
+#myprojects {
+  height: 1000px;
+}
+
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  place-items: center;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 400px;
+  background: #fff;
+  box-shadow: 0px 2px 5px #010016;
+  transition: transform 300ms ease-out;
+  overflow: hidden;
+}
+
+.card > h2 {
+  margin: 0;
+  font-size: 50px;
+  position: absolute;
+  color: white;
+  transition: transform 300ms ease-in-out;
+}
+
+.card:not(:hover) > img {
+  filter: blur(1px);
+}
+
+.card > img {
+  background-size: cover;
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  transition: transform 500ms ease-in-out;
+}
+
+.card:hover > img {
+  transform: rotateZ(-2deg) scale(1.1);
+}
+
+.card:hover > h2 {
+  transform: translateY(-80px);
+}
+
+.card:hover {
+  transform: translateY(-50px);
+}
+
+.card:nth-child(odd):hover {
+  transform: translateX(50px);
+}
+.card:nth-child(even):hover {
+  transform: translateX(-50px);
+}
+
+/********* FOURTH SECTION ********/
+
+#contact {
+  height: 400px;
+  background: linear-gradient(180deg, var(--main-purple) 0%, #8179eb 100%);
+}
+.contact-me {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-me h2 {
+  font-size: 30px;
+  color: #010016;
+}
+
+/****** FOOTER ******/
+#footer > div {
+  height: 40px;
+  border-top: 2px solid #736f9e;
+  background: #333;
+}
+
+#footer p {
+  color: #fff;
+  font-size: 10px;
+}
+
+#trademark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make it responsive for phone screens */
